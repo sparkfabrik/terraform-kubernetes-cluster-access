@@ -40,3 +40,15 @@ variable "enable_nodes_info_and_metrics_for_admins" {
   default     = true
   description = "Whether to enable the nodes informations and metrics for admins groups. This requires to create a ClusterRole and a ClusterRoleBinding"
 }
+
+variable "enable_namespaces_info_for_developers" {
+  type        = bool
+  default     = false
+  description = "Whether to enable the namespaces informations for developers groups. This requires to create a ClusterRole and a ClusterRoleBinding"
+}
+
+variable "enable_namespaces_info_for_admins" {
+  type        = bool
+  default     = false
+  description = "Whether to enable the namespaces informations for admins groups. This requires to create a ClusterRole and a ClusterRoleBinding"
+}

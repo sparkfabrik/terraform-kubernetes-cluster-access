@@ -8,7 +8,13 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
----
+## [0.2.0] - 2024-01-04
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.1.0...0.2.0)
+
+### Added
+
+- Add possibility to specify if developer and/or admin groups should list and get information about the namespaces.
 
 ## [0.1.0] - 2023-11-16
 
