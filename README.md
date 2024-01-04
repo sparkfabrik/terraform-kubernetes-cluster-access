@@ -9,6 +9,8 @@ This module creates `ClusterRole` and `RoleBinding` in the specified namespace w
 
 If the `enable_nodes_info_and_metrics_for_developers` and/or `enable_nodes_info_and_metrics_for_admins` are enabled, the `developer_groups` and/or `admin_groups` will have reading access to the `nodes` resources to get information and metrics about them.
 
+If the `enable_namespaces_info_for_developers` and/or `enable_namespaces_info_for_admins` are enabled, the `developer_groups` and/or `admin_groups` will have reading access to the `namespace` resources to get information list them.
+
 <!-- BEGIN_TF_DOCS -->
 ## Providers
 
@@ -29,6 +31,8 @@ If the `enable_nodes_info_and_metrics_for_developers` and/or `enable_nodes_info_
 |------|-------------|------|---------|:--------:|
 | <a name="input_admin_groups"></a> [admin\_groups](#input\_admin\_groups) | The list of groups to grant admin access to | `list(string)` | `[]` | no |
 | <a name="input_developer_groups"></a> [developer\_groups](#input\_developer\_groups) | The list of groups to grant developer access to | `list(string)` | `[]` | no |
+| <a name="input_enable_namespaces_info_for_admins"></a> [enable\_namespaces\_info\_for\_admins](#input\_enable\_namespaces\_info\_for\_admins) | Whether to enable the namespaces informations for admins groups. This requires to create a ClusterRole and a ClusterRoleBinding | `bool` | `false` | no |
+| <a name="input_enable_namespaces_info_for_developers"></a> [enable\_namespaces\_info\_for\_developers](#input\_enable\_namespaces\_info\_for\_developers) | Whether to enable the namespaces informations for developers groups. This requires to create a ClusterRole and a ClusterRoleBinding | `bool` | `false` | no |
 | <a name="input_enable_nodes_info_and_metrics_for_admins"></a> [enable\_nodes\_info\_and\_metrics\_for\_admins](#input\_enable\_nodes\_info\_and\_metrics\_for\_admins) | Whether to enable the nodes informations and metrics for admins groups. This requires to create a ClusterRole and a ClusterRoleBinding | `bool` | `true` | no |
 | <a name="input_enable_nodes_info_and_metrics_for_developers"></a> [enable\_nodes\_info\_and\_metrics\_for\_developers](#input\_enable\_nodes\_info\_and\_metrics\_for\_developers) | Whether to enable the nodes informations and metrics for developers groups. This requires to create a ClusterRole and a ClusterRoleBinding | `bool` | `true` | no |
 | <a name="input_k8s_labels"></a> [k8s\_labels](#input\_k8s\_labels) | The labels to apply to the Kubernetes resources | `map(string)` | <pre>{<br>  "scope": "cluster-access"<br>}</pre> | no |
@@ -43,10 +47,13 @@ No outputs.
 
 | Name | Type |
 |------|------|
+| [kubernetes_cluster_role_binding_v1.namespaces_info_for_admins](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_binding_v1) | resource |
+| [kubernetes_cluster_role_binding_v1.namespaces_info_for_developers](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_binding_v1.nodes_info_for_admins](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_binding_v1.nodes_info_for_developers](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_binding_v1) | resource |
 | [kubernetes_cluster_role_v1.admin](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_v1) | resource |
 | [kubernetes_cluster_role_v1.developer](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_v1) | resource |
+| [kubernetes_cluster_role_v1.namespaces_info](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_v1) | resource |
 | [kubernetes_cluster_role_v1.nodes_info](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/cluster_role_v1) | resource |
 | [kubernetes_role_binding_v1.admin](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/role_binding_v1) | resource |
 | [kubernetes_role_binding_v1.developer](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs/resources/role_binding_v1) | resource |
