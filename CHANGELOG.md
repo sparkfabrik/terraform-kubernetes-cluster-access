@@ -8,6 +8,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.3.0] - 2024-01-25
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.2.0...0.3.0)
+
+### Added
+
+- Add Horizontal Pod Autoscaler (HPA) permissions to the `developer` cluster role.
+
 ## [0.2.0] - 2024-01-04
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.1.0...0.2.0)
