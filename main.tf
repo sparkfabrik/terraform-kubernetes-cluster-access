@@ -90,6 +90,12 @@ resource "kubernetes_cluster_role_v1" "developer" {
     resources  = ["pods"]
     verbs      = ["list"]
   }
+
+  rule {
+    api_groups = ["autoscaling"]
+    resources  = ["horizontalpodautoscalers"]
+    verbs      = ["get", "list", "watch"]
+  }
 }
 
 # RoleBinding for namespace scoped resources
