@@ -67,8 +67,6 @@ resource "kubernetes_cluster_role_v1" "developer" {
       "cronjobs",
       "deployments",
       "events",
-      "ingresses",
-      "ingresses/status",
       "pods",
       "pods/log",
       "pods/portforward",
@@ -83,6 +81,15 @@ resource "kubernetes_cluster_role_v1" "developer" {
     api_groups = [""]
     resources  = ["pods/exec", "pods/portforward"]
     verbs      = ["create"]
+  }
+
+  rule {
+    api_groups = ["networking.k8s.io"]
+    resources = [
+      "ingresses",
+      "ingresses/status",
+    ]
+    verbs = ["get", "list", "watch"]
   }
 
   rule {
@@ -191,6 +198,15 @@ resource "kubernetes_cluster_role_v1" "admin" {
     api_groups = ["", "apps", "autoscaling", "batch", "extensions"]
     resources  = ["*"]
     verbs      = ["*"]
+  }
+
+  rule {
+    api_groups = ["networking.k8s.io"]
+    resources = [
+      "ingresses",
+      "ingresses/status",
+    ]
+    verbs = ["get", "list", "watch"]
   }
 
   rule {

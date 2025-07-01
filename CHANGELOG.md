@@ -8,6 +8,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.4.0] - 2025-07-01
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.3.0...0.4.0)
+
+### Changed
+
+- Update developer and admin cluster roles to include permissions for `ingresses` and `ingresses/status` resources.
+
 ## [0.3.0] - 2024-01-25
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.2.0...0.3.0)
