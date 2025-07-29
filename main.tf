@@ -69,18 +69,11 @@ resource "kubernetes_cluster_role_v1" "developer" {
       "events",
       "pods",
       "pods/log",
-      "pods/portforward",
       "replicasets",
       "secrets",
       "services",
     ]
     verbs = ["get", "list", "watch"]
-  }
-
-  rule {
-    api_groups = [""]
-    resources  = ["pods/exec", "pods/portforward"]
-    verbs      = ["create"]
   }
 
   rule {

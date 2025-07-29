@@ -8,6 +8,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.5.0] - 2025-07-29
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.4.0...0.5.0)
+
+### Changed
+
+- Remove `pods/exec` and `pods/portforward` permission from the `developer` cluster role.
+
 ## [0.4.0] - 2025-07-01
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.3.0...0.4.0)
