@@ -81,6 +81,7 @@ resource "kubernetes_cluster_role_v1" "developer" {
     resources = [
       "ingresses",
       "ingresses/status",
+      "networkpolicies",
     ]
     verbs = ["get", "list", "watch"]
   }
@@ -200,6 +201,14 @@ resource "kubernetes_cluster_role_v1" "admin" {
       "ingresses/status",
     ]
     verbs = ["get", "list", "watch"]
+  }
+
+  rule {
+    api_groups = ["networking.k8s.io"]
+    resources = [
+      "networkpolicies",
+    ]
+    verbs = ["*"]
   }
 
   rule {

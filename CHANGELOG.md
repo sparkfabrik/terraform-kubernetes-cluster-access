@@ -8,6 +8,14 @@ to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-03-27
+
+[Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.5.0...0.6.0)
+
+### Added
+
+- Add `networkpolicies` permissions to the `developer` and `admin` cluster roles.
+
 ## [0.5.0] - 2025-07-29
 
 [Compare with previous version](https://github.com/sparkfabrik/terraform-kubernetes-cluster-access/compare/0.4.0...0.5.0)
